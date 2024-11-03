@@ -1,0 +1,39 @@
+<navbar></navbar>
+
+<div class="content">
+  <div class="fiber-ecommerce-flow-concept">
+    Fiber Ecommerce Flow Concept
+  </div>
+
+  <div class="desc">
+    <div>
+      Limitless. Fast as Lightning. or something like that idk
+      <br/>not done yet just messing around
+    </div>
+  </div>
+  
+  <div class="address-check">
+    <div class="lets-see">Lets see if you're in our service area</div>
+    <div class="address-check-form">
+      <input type="text" placeholder="Enter your address" [(ngModel)]="address"/>
+      <button (click)="checkAvailibilityClicked($event)">Check Availability</button>
+    </div>
+  </div>
+  <div class="products" #options>
+    <product
+      [name]="option1.name"
+      [price]="option1.price"
+      [bulletPoints]="option1.bulletPoints">
+    </product>
+    <product
+      [name]="option2.name"
+      [price]="option2.price"
+      [bulletPoints]="option2.bulletPoints">
+    </product>
+    <product
+      [name]="option3.name"
+      [price]="option3.price"
+      [bulletPoints]="option3.bulletPoints">
+    </product>
+  </div>
+</div>

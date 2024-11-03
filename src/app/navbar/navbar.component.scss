@@ -1,0 +1,119 @@
+@keyframes fadeAndDropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  }
+
+
+.navbar {
+    font-family: 'SF Pro Display', sans-serif, 'Arial';
+    background: linear-gradient(90deg, rgba(255,98,193,0.3) 0%, rgba(98,198,255,0.3) 100%);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .options {
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            font-style: italic;
+            font-size: 18px;
+            font-weight: 600;
+            color: black;
+            cursor: pointer;
+            svg {
+                height: 18px;
+                width: auto;
+                fill: black;
+            }
+        }
+        height: 46px;
+        letter-spacing: 0.5px;
+        font-size: 13px;
+        line-height: 13px;
+        color: black;
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .option-container {
+            display: flex;
+            gap: 60px;
+            .option {
+                cursor: pointer;
+            }
+        }
+    }
+    .submenu {
+        width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 60px;
+        .submenu-items {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            padding-top: 30px;
+            padding-bottom: 50px;
+            &.animate {
+                animation: fadeAndDropIn 0.4s ease 0.2s forwards;
+            }
+            .item {
+                width: fit-content;
+                font-size: 24px;
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out forwards;
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.03);
+                    transition: all 0.1s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+    transition: backdrop-filter 0.3s ease-in-out;
+
+    &.hovering {
+        backdrop-filter: blur(10px);
+        transition: backdrop-filter 0.3s ease-in-out 0.05s;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+
